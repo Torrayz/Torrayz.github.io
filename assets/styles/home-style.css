@@ -1,0 +1,42 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color:aliceblue;
+  }
+
+  th,
+  td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+
+  th {
+    background-color: #f2f2f2;
+  }
+
+  form {
+    margin-bottom: 20px;
+    
+  }
+
+  label {
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  input {
+    padding: 8px;
+    width: 40%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+  }
+
+  button {
+    padding: 10px;
+    background-color: blue;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
