@@ -1,21 +1,32 @@
-# MADURA STORE — Cerita di Setiap Rasa
+<div align="center">
 
-Modern culinary discovery for Indonesian food stories, recipes, and everyday kitchen inspiration.
+# MADURA STORE
+### Cerita di Setiap Rasa.
 
-## What it does
-- Discover recipes by name, region, category, description, or ingredient.
-- Filter main dishes, snacks, and traditional recipes.
-- Read ingredient lists and cooking steps.
-- Save favorite recipes in the browser.
-- Match available pantry ingredients to recipe ideas.
-- Build and copy a shopping list from selected recipes.
-- Share recipes using Web Share API or clipboard.
-- Optional Supabase connection for published recipes and contact messages.
+**A modern culinary discovery experience inspired by the warmth of Indonesian kitchens.**
 
-## Stack
-Vite, vanilla JavaScript ES modules, CSS, Supabase JS (optional), GitHub Pages.
+![Status](https://img.shields.io/badge/status-modern%20rebuild-c65b38) ![Stack](https://img.shields.io/badge/stack-Vite%20%7C%20JavaScript-26382f) ![Database](https://img.shields.io/badge/backend-Supabase-3ecf8e)
 
-## Local development
+</div>
+
+## ✦ Tentang
+MADURA STORE mengembangkan katalog makanan sederhana menjadi pengalaman eksplorasi kuliner Nusantara: resep, cerita daerah, pencarian, pencocokan bahan, favorit, daftar belanja, dan pesan kontak.
+
+## ✦ Fitur
+- Cari resep berdasarkan nama, daerah, deskripsi, atau bahan.
+- Filter kategori makanan utama, camilan, dan tradisional.
+- Detail bahan dan langkah memasak.
+- Favorit dan daftar belanja lokal di browser.
+- Smart Pantry untuk mencari resep dari bahan yang tersedia.
+- Bagikan resep melalui Web Share API atau clipboard.
+- Kontak tersimpan di Supabase.
+- Katalog mengambil resep terbit dari Supabase; seed lokal menjadi fallback.
+- Responsive layout, reveal motion, hover transitions, reduced-motion support.
+
+## ✦ Tech stack
+Vite, vanilla JavaScript ES modules, CSS, Supabase JS, PostgreSQL, RLS, Supabase Storage, GitHub Pages.
+
+## ✦ Local development
 Requires Node.js 20.9+ and npm.
 ```bash
 npm install
@@ -25,25 +36,41 @@ npm run build
 npm run preview
 ```
 
-## Supabase
-Copy `.env.example` to `.env`:
-```env
-VITE_SUPABASE_URL=https://YOUR_PROJECT_REF.supabase.co
-VITE_SUPABASE_PUBLISHABLE_KEY=sb_publishable_xxx
-```
-Only publishable keys belong in browser code. Never expose service-role or secret keys. Demo mode works without Supabase. Database migration and RLS must be applied only after a dedicated Supabase project has been selected and reviewed.
+## ✦ Supabase
+The app connects to the shared project `torray-workspace`:
+- Project ref: `ndusjwlcvdovdjmivxkj`
+- Region: Singapore
+- Public project URL and publishable key are configured in `src/lib/supabase.js`.
 
-## Design
-Warm editorial palette: cream, forest green, and terracotta. Responsive layouts, subtle scroll reveals, image hover transitions, and `prefers-reduced-motion` support.
+Only a publishable key is used in browser code. No service-role or secret key is included in the repository.
 
-## Roadmap
-- [x] Modern landing and responsive catalogue
-- [x] Recipe search and category filters
-- [x] Recipe details, favorites, ingredient matcher
-- [x] Shopping list and sharing
-- [x] Supabase client scaffold
-- [ ] Secure content studio and editor roles
-- [ ] Apply and verify Supabase schema/RLS
+### Database model
+- `recipes`: public read for published recipes; draft and management access requires MADURA_STORE membership.
+- `contact_messages`: public insert; read access restricted to MADURA_STORE owner/admin.
+- `recipe_favorites`: private to each authenticated user.
+- `app_memberships`: operator-managed roles for each application.
+- `student_records`: private to the authenticated account owner.
+- `student_audit_log`: append-only database-generated record history, readable by the owner.
+
+Recipe image storage uses the `madura-recipe-images` public bucket. Upload/delete operations require a MADURA_STORE membership.
+
+### Security and setup
+The SQL migrations are in `supabase/migrations/` and have been applied to the dedicated project. RLS is enabled for all application tables. Do not add a service-role key to frontend environment variables.
+
+The MADURA_STORE admin role is intentionally not self-assignable from the public client. Assign an initial owner through a trusted operator process before enabling the content-management UI.
+
+## ✦ Design principles
+Warm editorial identity: cream, forest green, and terracotta. Mobile-first ergonomics, purposeful motion, semantic HTML, keyboard-friendly dialogs, and reduced-motion support.
+
+## ✦ Roadmap
+- [x] Modern responsive culinary landing and catalogue
+- [x] Search, category filters, recipe detail, favorites
+- [x] Ingredient matcher and shopping list
+- [x] Supabase public recipe read and contact insert
+- [x] Shared project schema, RLS, Storage bucket
+- [ ] Trusted MADURA_STORE owner provisioning and secure content studio
+- [ ] Persist favorites to Supabase for signed-in users
+- [ ] Rate-limit public contact submissions
 - [ ] Browser E2E and accessibility audit
 
-The current release is a frontend rebuild. Demo/local persistence is not production authentication or multi-user storage.
+**Status:** connected frontend and Supabase schema. Admin provisioning and full production QA remain outstanding.
