@@ -1,37 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-J8FT3JG8LF"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-J8FT3JG8LF');
-</script>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="assets/styles/login-style.css" />
-    <title>web toro</title>
-  </head>
-  <body>
-    <main>
-      <form id="loginForm" class="login-input">
-        <label for="inputEmail">masukin email </label>
-        <input id="inputEmail" type="email" required />
-        <label for="inputPassword">Password nya apa</label>
-        <input id="inputPassword" type="password" required />
-        <button id="buttonLogin" type="submit">Login</button>
-      </form>
-    </main>
-    <div id="login" class="pop-up-login">
-      <h2>Login gagal!</h2>
-      <p>Silakan coba lagi</p>
-    </div>
-
-    <script src="assets/scripts/_init.js"></script>
-    <script src="assets/scripts/login-script.js"></script>
-  </body>
-</html>
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f5f0e7"><meta name="description" content="Jelajahi resep, cerita daerah, dan inspirasi memasak dari seluruh Nusantara bersama MADURA STORE.">
+  <meta property="og:title" content="MADURA STORE — Cerita di Setiap Rasa"><meta property="og:description" content="Temukan rasa, temukan rumah. Jelajahi resep Nusantara.">
+  <title>MADURA STORE — Cerita di Setiap Rasa</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="src/styles.css">
+</head>
+<body>
+  <div class="announcement"><span>✳</span> MERAYAKAN RASA NUSANTARA <span>✳</span> DARI DAPUR UNTUK CERITA</div>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="Madura Store beranda"><span class="brand-mark">M.</span><span class="brand-name">MADURA <small>STORE · KULINER NUSANTARA</small></span></a>
+    <nav class="main-nav" id="mainNav"><a href="#jelajah">Jelajahi</a><a href="#dapur">Dapur Pintar</a><a href="#cerita">Cerita Kami</a></nav>
+    <div class="header-actions"><button class="header-icon" id="openFavorites" aria-label="Resep favorit">♡ <span id="favoriteCount">0</span></button><button class="header-icon" id="openShopping" aria-label="Daftar belanja">▤ <span id="shoppingCount">0</span></button><a class="admin-link" href="admin.html">Studio ↗</a><button class="menu-toggle" id="menuToggle" aria-label="Buka navigasi">☰</button></div>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">RASA YANG PUNYA CERITA <span>— EST. 2024</span></p>
+        <h1>Temukan rasa,<br><em>temukan rumah.</em></h1>
+        <p class="hero-description">Perjalanan kecil menyusuri kekayaan kuliner Indonesia. Resep rumahan, cerita daerah, dan inspirasi untuk meja makanmu.</p>
+        <div class="hero-actions"><a class="button button-dark" href="#jelajah">Jelajahi resep <span>↗</span></a><a class="text-action" href="#dapur">Masak dari isi kulkas <span>↓</span></a></div>
+        <div class="hero-footnote"><span class="spark">✳</span> Dikurasi dengan rasa ingin tahu. Dibagikan dengan hati.</div>
+      </div>
+      <div class="hero-visual reveal"><div class="hero-photo"><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&q=85" alt="Hidangan lezat tersaji di meja makan" fetchpriority="high"></div><div class="photo-caption">DARI DAPUR NUSANTARA <b>01 / 05</b></div><div class="round-stamp">RASA<br>ASLI<br>✳</div><div class="hero-index">01—05</div></div>
+    </section>
+    <div class="ticker" aria-hidden="true"><div>MASAK DENGAN HATI <span>✳</span> CERITA DI SETIAP RASA <span>✳</span> WARISAN NUSANTARA <span>✳</span> MASAK DENGAN HATI <span>✳</span> CERITA DI SETIAP RASA <span>✳</span></div></div>
+    <section class="section recipes-section" id="jelajah">
+      <div class="section-heading reveal"><div><p class="eyebrow">DARI KOMPILASI DAPUR KAMI</p><h2>Yang ingin kamu<br><em>cicipi hari ini?</em></h2></div><p>Temukan hidangan yang sederhana, akrab, dan selalu punya cerita. Pilih satu, lalu mulai petualangan rasa.</p></div>
+      <div class="catalogue-toolbar"><label class="search-box"><span>⌕</span><input id="recipeSearch" type="search" placeholder="Cari makanan, daerah, atau bahan..." autocomplete="off"><kbd>⌘ K</kbd></label><div class="filter-row" id="categoryFilters"><button class="filter-chip active" data-category="Semua">Semua resep</button><button class="filter-chip" data-category="Makanan utama">Makanan utama</button><button class="filter-chip" data-category="Camilan">Camilan</button><button class="filter-chip" data-category="Tradisional">Tradisional</button></div></div>
+      <div class="recipe-grid" id="recipeGrid" aria-live="polite"></div><div class="empty-state" id="emptyState" hidden><span>✳</span><h3>Belum ketemu yang cocok.</h3><p>Coba kata kunci atau kategori yang lain, ya.</p><button class="button button-outline" id="clearSearch">Reset pencarian</button></div>
+    </section>
+    <section class="pantry-section" id="dapur">
+      <div class="pantry-art"><div class="pantry-orbit orbit-one"></div><div class="pantry-orbit orbit-two"></div><div class="pantry-emoji">🥬</div><span class="pantry-label label-one">PILIH BAHANMU</span><span class="pantry-label label-two">KAMI CARI IDE-NYA</span></div>
+      <div class="pantry-copy reveal"><p class="eyebrow">DAPUR PINTAR · ANTI BINGUNG</p><h2>Ada apa di kulkas?<br><em>Masak apa hari ini?</em></h2><p>Masukkan bahan yang kamu punya. Kami bantu temukan resep yang paling mendekati isi dapurmu—supaya bahan tidak terbuang sia-sia.</p><div class="ingredient-input"><input id="ingredientInput" type="text" placeholder="Contoh: telur, nasi, ayam..." aria-label="Masukkan bahan makanan"><button id="findByIngredients" class="button button-dark">Cari ide ↗</button></div><div class="ingredient-suggestions"><span>Coba:</span><button data-ingredient="telur">telur</button><button data-ingredient="ayam">ayam</button><button data-ingredient="nasi">nasi</button><button data-ingredient="tahu">tahu</button></div><p class="pantry-result" id="pantryResult" aria-live="polite"></p></div>
+    </section>
+    <section class="story-section" id="cerita"><div class="story-image reveal"><img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1200&q=85" alt="Suasana dapur rumahan yang hangat" loading="lazy"><span>DI BALIK SETIAP HIDANGAN</span></div><div class="story-copy reveal"><p class="eyebrow">LEBIH DARI SEKADAR RESEP</p><h2>Setiap hidangan<br>menyimpan <em>kenangan.</em></h2><p>Kami percaya makanan adalah cara paling hangat untuk mengenal tempat, keluarga, dan tradisi. MADURA STORE hadir untuk merawat cerita itu—satu resep pada satu waktu.</p><a class="underlined-link" href="mailto:halo@madurastore.example?subject=Cerita%20dari%20dapur">Punya cerita untuk kami? <span>↗</span></a></div></section>
+    <section class="community-section"><div class="community-inner reveal"><p class="eyebrow">DAPUR SELALU TERBUKA</p><h2>Ada cerita rasa<br>yang ingin dibagikan?</h2><p>Kirim resep keluarga, cerita daerah, atau pertanyaan untuk tim kami.</p><form id="contactForm" class="contact-form"><input name="name" required maxlength="80" placeholder="Nama kamu" aria-label="Nama"><input name="email" type="email" required maxlength="120" placeholder="Alamat email" aria-label="Alamat email"><textarea name="message" required minlength="10" maxlength="1500" placeholder="Ceritakan sesuatu..." aria-label="Pesan"></textarea><button class="button button-light" type="submit">Kirim cerita <span>↗</span></button><p id="contactStatus" role="status"></p></form></div></section>
+  </main>
+  <footer class="site-footer"><a class="brand" href="#"><span class="brand-mark">M.</span><span class="brand-name">MADURA <small>STORE · KULINER NUSANTARA</small></span></a><p>Merawat rasa, merayakan cerita. © <span id="year"></span> MADURA STORE.</p><a href="#">Kembali ke atas ↑</a></footer>
+  <aside class="drawer" id="shoppingDrawer" aria-hidden="true"><div class="drawer-backdrop" data-close-drawer></div><section class="drawer-panel"><div class="drawer-heading"><div><p class="eyebrow">DAPUR PERSIAPAN</p><h2>Daftar belanja</h2></div><button class="close-button" data-close-drawer aria-label="Tutup">×</button></div><p class="drawer-subtitle">Bahan dari resep yang ingin kamu coba, terkumpul di satu tempat.</p><div id="shoppingItems" class="shopping-items"></div><div class="drawer-actions"><button id="copyShopping" class="button button-dark">Salin daftar <span>↗</span></button><button id="clearShopping" class="text-action">Kosongkan</button></div></section></aside>
+  <dialog class="recipe-dialog" id="recipeDialog"><button class="dialog-close" id="closeRecipe" aria-label="Tutup detail">×</button><div id="recipeDetail"></div></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="src/app.js"></script>
+</body></html>
